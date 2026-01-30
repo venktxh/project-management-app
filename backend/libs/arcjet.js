@@ -1,15 +1,15 @@
 import arcjet, {
-  shield,
   detectBot,
+  shield,
   tokenBucket,
   validateEmail,
 } from "@arcjet/node";
-import { isSpoofedBot } from "@arcjet/inspect";
 
 const aj = arcjet({
   // Get your site key from https://app.arcjet.com and set it as an environment
   // variable rather than hard coding.
   key: process.env.ARCJET_KEY,
+  characteristics: ["ip.src"], // Track requests by IP
   rules: [
     // Shield protects your app from common attacks e.g. SQL injection
     shield({ mode: "LIVE" }),
@@ -41,4 +41,3 @@ const aj = arcjet({
 });
 
 export default aj;
-export { isSpoofedBot };
