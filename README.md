@@ -1,86 +1,72 @@
-🚀 Project Management App
+# 🚀 Project Management App
 
-A full-stack Project Management Platform that allows teams to collaborate using workspaces, projects, and tasks, with secure user authentication and member invitations.
+A full-stack **Project Management Platform** that helps teams collaborate using **workspaces**, **projects**, and **tasks**, with secure authentication and member invitations.
 
-✨ Features
-🏢 Workspaces
+---
 
-Create and manage multiple workspaces
+## ✨ Features
 
-Invite users to collaborate
+### 🏢 Workspaces
+- Create and manage multiple workspaces
+- Invite team members via email
+- Role-based access (Owner, Admin, Member)
 
-Role-based access (owner, admin, member)
+### 📁 Projects
+- Create projects inside workspaces
+- Assign members to projects
+- Track project status (Planning, In Progress, Completed)
 
-📁 Projects
+### ✅ Tasks
+- Create tasks under projects
+- Task statuses: To Do, In Progress, Done
+- Task priorities: Low, Medium, High
+- Due dates and upcoming task tracking
 
-Create projects inside a workspace
+### 📊 Dashboard
+- Workspace-level analytics
+- Project and task statistics
+- Task trends and productivity charts
+- Upcoming tasks overview
 
-Assign members to projects
+### 🔐 Authentication
+- User signup and login
+- Email verification
+- Password reset
+- JWT-based authentication
+- Protected routes and APIs
 
-Track project status (Planning, In Progress, Completed)
+---
 
-✅ Tasks
+## 🛠 Tech Stack
 
-Create tasks under projects
+### Frontend
+- React
+- TypeScript
+- React Router
+- TanStack React Query
+- Tailwind CSS
+- shadcn/ui
+- Recharts
 
-Task statuses: To Do, In Progress, Done
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Nodemailer
 
-Task priorities: Low, Medium, High
+---
 
-Due dates and upcoming task tracking
+## 🎨 UI Components
 
-📊 Dashboard & Analytics
+This project uses **shadcn/ui**, a modern and customizable component library built on top of Tailwind CSS and Radix UI, providing accessible and reusable UI components.
 
-Workspace-level dashboard
+---
 
-Project and task statistics
+## 📁 Project Structure
 
-Task trends and productivity charts
-
-Upcoming tasks overview
-
-🔐 Authentication & Security
-
-User signup & login
-
-Email verification
-
-Password reset
-
-JWT-based authentication
-
-Protected API routes
-
-🛠 Tech Stack
-Frontend
-
-React
-
-TypeScript
-
-React Router
-
-React Query (TanStack Query)
-
-Tailwind CSS
-
-Recharts (for analytics & charts)
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-JWT Authentication
-
-Nodemailer (email invites & verification)
-
-📁 Project Structure
+```text
 project-management-app/
 ├── backend/
 │   ├── controllers/
@@ -93,6 +79,7 @@ project-management-app/
 ├── frontend/
 │   ├── app/
 │   │   ├── components/
+│   │   │   └── ui/        # shadcn/ui components
 │   │   ├── routes/
 │   │   ├── hooks/
 │   │   ├── lib/
@@ -111,27 +98,17 @@ EMAIL_USER=your_email
 EMAIL_PASS=your_email_password
 FRONTEND_URL=http://localhost:5173
 
-▶️ Running the Project Locally
-1️⃣ Clone the repository
+▶️ Run Locally
+Clone repository
 git clone https://github.com/your-username/project-management-app.git
 cd project-management-app
 
-2️⃣ Backend setup
+Backend
 cd backend
 npm install
 npm run dev
 
-
-Server runs on:
-
-http://localhost:5000
-
-3️⃣ Frontend setup
+Frontend
 cd frontend
 npm install
 npm run dev
-
-
-Frontend runs on:
-
-http://localhost:5173
