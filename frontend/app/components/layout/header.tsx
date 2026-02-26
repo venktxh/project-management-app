@@ -2,6 +2,8 @@ import { useAuth } from "@/provider/auth-context";
 import type { Workspace } from "@/types";
 import { Button } from "../ui/button";
 import { Bell, PlusCircle } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchData } from "@/lib/fetch-util";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,7 +31,10 @@ export const Header = ({
   const navigate = useNavigate();
 
   const { user, logout } = useAuth();
-  const { workspaces } = useLoaderData() as { workspaces: Workspace[] };
+  const { data: workspaces = [] } = useQuery({
+    queryKey: ["workspaces"],
+    queryFn: () => fetchData<Workspace[]>("/workspaces"),
+  });
   const isOnWorkspacePage = useLocation().pathname.includes("/workspace");
 
   const handleOnClick = (workspace: Workspace) => {

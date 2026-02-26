@@ -8,14 +8,6 @@ import type { Workspace } from "@/types";
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router";
 
-export const clientLoader = async () => {
-  try {
-    const [workspaces] = await Promise.all([fetchData("/workspaces")]);
-    return { workspaces };
-  } catch (error) {
-    console.log(error);
-  }
-};
 const DashboardLayout = () => {
   const { isAuthenticated, isLoading } = useAuth();
   const [isCreatingWorkspace, setIsCreatingWorkspace] = useState(false);
